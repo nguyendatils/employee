@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Employee</title>
@@ -15,7 +15,10 @@
 
 </head>
 <body ng-app="springbootApp" ng-controller="webController">
-    <h3>Employee</h3>
+    <h3>Employees</h3>
+    <p>{{}}</p>
+    <a href="/logout"><button class="btn btn-primary">Log out</button></a>
+
     <div kendo-grid="listEmployeeGrid" k-options="listEmployee" id="grid"></div>
 
     <script src="resources/js/lib/jquery.min.js"></script>

@@ -18,12 +18,12 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping("/process_register")
-    public ResponseEntity<User> processRegister(User user){
+    public String processRegister(User user){
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
-
+        userRepository.save(user);
         ;
-        return ResponseEntity.ok(userRepository.save(user));
+        return "redirect:/login";
     }
 }
