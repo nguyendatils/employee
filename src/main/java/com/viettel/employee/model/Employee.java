@@ -17,7 +17,7 @@ public class Employee {
     private String name;
 
     @Column(name = "phone_number")
-    private long phone_number;
+    private String phone_number;
 
     @Column(name = "email")
     private String email;

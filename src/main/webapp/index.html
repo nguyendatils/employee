@@ -5,21 +5,40 @@
     <title>Employee</title>
 
 
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2021.2.616/styles/kendo.default-v2.min.css"/>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.3.1023/styles/kendo.default-v2.min.css"/>
     <link rel="stylesheet" href="//kendo.cdn.telerik.com/2019.3.1023/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="//kendo.cdn.telerik.com/2019.3.1023/styles/kendo.default.min.css" />
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 
 
-
 </head>
 <body ng-app="springbootApp" ng-controller="webController">
-    <h3>Employees</h3>
-    <p>{{}}</p>
-    <a href="/logout"><button class="btn btn-primary">Log out</button></a>
+    <div style="">
+        <div class="col-md-2 col-md-offset" style="border-right: 1px solid #dee2e6!important;min-height: 100vh;background-color: #f8f9fa!important;padding: 0px!important; ">
+            <div class="list-group">
+                <div style="margin-bottom: 15px;margin-left: 20px" class="list-group-item-heading">
+                    <h3>Employees</h3>
+                </div>
+                <a href="#" class="list-group-item" style="background-color: #f8f9fa!important;border: none;border-top: 1px solid rgba(0,0,0,.125);"  ng-click="onChange1()">Quản lý nhân viên</a>
+                <a href="#" class="list-group-item" style="background-color: #f8f9fa!important;border: none;border-top: 1px solid rgba(0,0,0,.125);" ng-click="onChange2()">Quản lý tài khoản</a>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-offset">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="padding-top: 20px">
+                <div class="pull-right navbar-collapse">
+                    <a href="/logout"><button class="btn btn-primary">Log out</button></a>
+                </div>
+            </nav>
 
-    <div kendo-grid="listEmployeeGrid" k-options="listEmployee" id="grid"></div>
+            <!--            <div kendo-grid="listEmployeeGrid" k-options="listEmployee" id="grid">-->
+            <div class="container-fluid" ng-include src="templateUrl()"></div>
+        </div>
+
+    </div>
+
+
+
 
     <script src="resources/js/lib/jquery.min.js"></script>
 <!--    <script src="resources/js/lib/jquery-2.2.2.min.js"></script>-->
@@ -29,6 +48,8 @@
     <script src="resources/js/lib/kendo.all.min.js"></script>
     <script src="resources/js/lib/restangular.min.js"></script>
     <script src="resources/js/src/main.js"></script>
+    <script src="web/account/accountController.js"></script>
+    <script src="web/employee/employeeController.js"></script>
     <script src="resources/js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
 </body>
 </html>

@@ -14,11 +14,11 @@ public class WebController {
     }
 
     @RequestMapping("/login")
-    public String login() { return "web-inf/login"; }
+    public String login() { return "web/login"; }
 
     @GetMapping("/registration")
     public String registration(Model model) {
         model.addAttribute("user", new User());
-        return "web-inf/registration";
+        return "web/registration";
     }
 }

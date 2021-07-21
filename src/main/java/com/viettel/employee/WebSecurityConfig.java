@@ -43,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return authProvider;
     }
 
-    @Autowired
+    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
@@ -54,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests().antMatchers("/registration").permitAll() //cho phép tất cả có thể truy cập vào /register
                 .anyRequest().authenticated() //các request khác cần xác thực mới được truy cập
                 .and()
-                .formLogin() //xác thực bằng form login
+                .formLogin()//xác thực bằng form login
                     .passwordParameter("/")
                     .permitAll()
                 .and()
